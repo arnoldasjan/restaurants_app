@@ -22,9 +22,15 @@ class _HomePageState extends State<HomePage> {
   String dropdownvalue = 'Current Location';
   final List<String> entries = <String>['Burger', 'Dessert', 'Pizza', 'Asian'];
 
+  final List<String> restaurants_names = <String>[
+    'Milliona State Cafe',
+    'Zemyn Upe'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -79,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.grey[100],
-                            prefixIcon: Icon(Icons.search),
+                            prefixIcon: Icon(Icons.search, color: Colors.black,),
                             border: InputBorder.none,
                             hintText: 'Search foods',
                           ),
@@ -111,13 +117,73 @@ class _HomePageState extends State<HomePage> {
                             width: 80.0,
                             child: Center(child: Icon(Icons.fastfood)),
                           ),
-                          SizedBox(height: 8.0,),
+                          SizedBox(
+                            height: 8.0,
+                          ),
                           Text('${entries[index]}'),
                         ],
                       );
                     },
-                    separatorBuilder: (BuildContext context, int index) => const SizedBox(width: 16.0,),
+                    separatorBuilder: (BuildContext context, int index) =>
+                        const SizedBox(
+                      width: 16.0,
+                    ),
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        'Popular',
+                        style: TextStyle(
+                            fontSize: 28, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+//                Container(
+//                  height: 300.0,
+//                  child: ListView.separated(
+//                    scrollDirection: Axis.vertical,
+//                    itemCount: restaurants_names.length,
+//                    itemBuilder: (BuildContext context, int index) {
+//                      return Stack(
+//                        children: <Widget>[],
+//                      );
+//                    },
+//                    separatorBuilder: (BuildContext context, int index) =>
+//                        const SizedBox(
+//                          width: 16.0,
+//                        ),
+//                  ),
+//                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      height: 240.0,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: ExactAssetImage('assets/dish1.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                    ),
+                    Positioned(
+                      right: 25.0,
+                      bottom: 20.0,
+                      child: Container(
+                        child: Center(child: Text('10-15 mins', style: TextStyle(fontWeight: FontWeight.bold),)),
+                        height: 45.0,
+                        width: 130.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: Colors.white
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
