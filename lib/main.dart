@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: CategoryPage(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -41,7 +42,6 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Icon(Icons.menu),
-                    Icon(Icons.shopping_basket),
                   ],
                 ),
                 Padding(
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                         'Delivering to',
                         style: TextStyle(
                           color: Colors.grey,
-                          fontSize: 16.0,
+                          fontSize: 14.0,
                           decoration: TextDecoration.none,
                         ),
                       ),
@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  padding: const EdgeInsets.only(top: 10.0, bottom: 25.0),
                   child: Row(
                     children: <Widget>[
                       Flexible(
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                       Flexible(
                         flex: 1,
                         child: Center(
-                          child: Icon(Icons.filter_list),
+                          child: Icon(FontAwesome.getIconData('sliders')),
                         ),
                       ),
                     ],
@@ -211,11 +211,21 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Row(
                         children: <Widget>[
-                          Icon(Icons.star, color: Colors.yellow[800],),
-                          Text('4.8', style: TextStyle(fontWeight: FontWeight.bold),),
-                          SizedBox(width: 10.0,),
+                          Icon(
+                            Icons.star,
+                            color: Colors.yellow[800],
+                          ),
+                          Text(
+                            '4.8',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: 10.0,
+                          ),
                           Text('(90)'),
-                          SizedBox(width: 20.0,),
+                          SizedBox(
+                            width: 20.0,
+                          ),
                           Text('Kaunas - Pizza - Breakfast and Brunch'),
                         ],
                       ),
@@ -240,9 +250,9 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         child: Center(
                             child: Text(
-                              '10-15 mins',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            )),
+                          '10-15 mins',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )),
                         height: 45.0,
                         width: 130.0,
                         decoration: BoxDecoration(
@@ -272,11 +282,21 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Row(
                         children: <Widget>[
-                          Icon(Icons.star, color: Colors.yellow[800],),
-                          Text('4.8', style: TextStyle(fontWeight: FontWeight.bold),),
-                          SizedBox(width: 10.0,),
+                          Icon(
+                            Icons.star,
+                            color: Colors.yellow[800],
+                          ),
+                          Text(
+                            '4.8',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: 10.0,
+                          ),
                           Text('(90)'),
-                          SizedBox(width: 20.0,),
+                          SizedBox(
+                            width: 20.0,
+                          ),
                           Text('Kaunas - Pizza - Breakfast and Brunch'),
                         ],
                       ),
@@ -287,6 +307,55 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class CategoryPage extends StatefulWidget {
+  @override
+  _CategoryPageState createState() => _CategoryPageState();
+}
+
+class _CategoryPageState extends State<CategoryPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          Stack(
+            children: <Widget>[
+              Container(
+                height: 250.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.darken),
+                    image: ExactAssetImage('assets/burger.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 25.0,
+                bottom: 30.0,
+                child: Text(
+                  'Burgers',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30.0,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 15.0,
+                top: 30.0,
+                child: IconButton(icon: Icon(Icons.arrow_back_ios, color: Colors.white,), onPressed: null),
+              ),
+            ],
+          ),
+          Container(),
+        ],
       ),
     );
   }
