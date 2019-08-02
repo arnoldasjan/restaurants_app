@@ -85,7 +85,10 @@ class _HomePageState extends State<HomePage> {
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.grey[100],
-                            prefixIcon: Icon(Icons.search, color: Colors.black,),
+                            prefixIcon: Icon(
+                              Icons.search,
+                              color: Colors.black,
+                            ),
                             border: InputBorder.none,
                             hintText: 'Search foods',
                           ),
@@ -161,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      height: 240.0,
+                      height: 230.0,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: ExactAssetImage('assets/dish1.jpg'),
@@ -174,16 +177,111 @@ class _HomePageState extends State<HomePage> {
                       right: 25.0,
                       bottom: 20.0,
                       child: Container(
-                        child: Center(child: Text('10-15 mins', style: TextStyle(fontWeight: FontWeight.bold),)),
+                        child: Center(
+                            child: Text(
+                          '10-15 mins',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )),
                         height: 45.0,
                         width: 130.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.white
-                        ),
+                            borderRadius: BorderRadius.circular(20.0),
+                            color: Colors.white),
                       ),
                     ),
                   ],
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2.0),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              'Zemyn Upe',
+                              style: TextStyle(
+                                fontSize: 22.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Icon(Icons.star, color: Colors.yellow[800],),
+                          Text('4.8', style: TextStyle(fontWeight: FontWeight.bold),),
+                          SizedBox(width: 10.0,),
+                          Text('(90)'),
+                          SizedBox(width: 20.0,),
+                          Text('Kaunas - Pizza - Breakfast and Brunch'),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      height: 230.0,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: ExactAssetImage('assets/dish1.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                    ),
+                    Positioned(
+                      right: 25.0,
+                      bottom: 20.0,
+                      child: Container(
+                        child: Center(
+                            child: Text(
+                              '10-15 mins',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )),
+                        height: 45.0,
+                        width: 130.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2.0),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              'Zemyn Upe',
+                              style: TextStyle(
+                                fontSize: 22.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Icon(Icons.star, color: Colors.yellow[800],),
+                          Text('4.8', style: TextStyle(fontWeight: FontWeight.bold),),
+                          SizedBox(width: 10.0,),
+                          Text('(90)'),
+                          SizedBox(width: 20.0,),
+                          Text('Kaunas - Pizza - Breakfast and Brunch'),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
